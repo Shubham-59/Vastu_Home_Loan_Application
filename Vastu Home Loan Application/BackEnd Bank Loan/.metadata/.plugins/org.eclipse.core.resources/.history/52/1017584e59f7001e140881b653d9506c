@@ -1,0 +1,77 @@
+package com.vashtu.app.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.vashtu.app.enums.Status;
+import com.vashtu.app.model.EnquiryForm;
+import com.vashtu.app.repository.EnquiryRepository;
+
+@Service
+public class EnquiryServiceimpl implements EnquiryService{
+	@Autowired
+	private EnquiryRepository enquiryRepo;
+
+	@Override
+	public EnquiryForm saveCustomerEnquiryinfo(EnquiryForm enquiry) 
+	{
+        if (enquiry.getStatus() == null || enquiry.getStatus().equals("")) {
+            enquiry.setStatus(Status.Registered); // Set default value if status is null or empty
+        }
+
+        EnquiryForm enq = enquiryRepo.save(enquiry);
+        return enq;
+    }
+
+	
+
+	
+
+
+	@Override
+	public List<EnquiryForm> getAllEnquiryDetailes()
+	{
+		List<EnquiryForm>listEnquiry=enquiryRepo.findAll();
+		
+		return listEnquiry;
+	}
+
+	@Override
+
+	public EnquiryForm getEnquiryById(int enquiryId) {
+		Optional<EnquiryForm>opEnquiry=enquiryRepo.findById(enquiryId);
+		if(opEnquiry.isPresent()) {
+			
+			EnquiryForm enquiryDetailes=opEnquiry.get();
+			return enquiryDetailes;
+		}
+		return null;
+	}
+	
+
+	@Override
+	public EnquiryForm updateStatusTo_Forward(int enquiryId/* , String status */) {
+		Optional<EnquiryForm>opEnquiry=enquiryRepo.findById(enquiryId);
+		if(opEnquiry.isPresent()) {
+			
+			EnquiryForm enquiryDetailes=opEnquiry.get();
+			enquiryDetailes.setStatus(Status.Forwarded);
+			
+			return enquiryRepo.save(enquiryDetailes);
+		}
+		return null;
+	
+
+
+
+		  //return null;
+	}
+
+	
+	
+
+
+}

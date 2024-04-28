@@ -1,0 +1,67 @@
+<div class="container">
+  <form [formGroup]="customerForm">
+    <h2 class="text-center mb-4">Sanction Details</h2>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="customerId" class="form-label">Loan Id:</label>
+        <span>{{ customerForm.value.customerId }}</span>
+      </div>
+      <div class="col-md-6">
+        <label for="firstName" class="form-label">Name:</label>
+        <span>{{ customerForm.value.firstName }}</span>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="requestedLoanAmount" class="form-label">Customer Required Loan Amount:</label>
+        <span>{{ customerForm.value.requestedLoanAmount }}</span>
+      </div>
+      <div class="col-md-6">
+        <label for="requireTenure" class="form-label">Customer Required Tenure:</label>
+        <span>{{ customerForm.value.requireTenure }}</span>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="cibilScore" class="form-label">Cibil Score:</label>
+        <span>{{ customerForm.value.cibilScore }}</span>
+      </div>
+      <!-- Assuming this is inside a form element -->
+<div class="col-md-6">
+  <label for="professionSalary" class="form-label">Monthly Income:</label>
+  <span>{{ customerForm.get('professionSalary').value }}</span>
+</div>
+
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="approvedLoanAmount" class="form-label">Approved Loan Amount:</label>
+        <span>{{ customerForm.value.approvedLoanAmounts}}</span>
+      </div>
+      <div class="col-md-6">
+        <label for="interestRate" class="form-label">Interest Rate:</label>
+        <span>{{ customerForm.value.interestRate }}</span>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="approvedTenure" class="form-label">Approved Tenure:</label>
+        <span>{{ customerForm.value.approvedTenur}}</span>
+      </div>
+      
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="approvedTenure" class="form-label">Monthly EMI:</label>
+        <span>{{ customerForm.value.approvedTenur}}</span>
+      </div>
+      
+    </div>
+    <div class="row">
+      <div class="col text-center">
+        <button type="submit" class="btn btn-success">Sanction Generate</button>
+      </div>
+    </div>
+  </form>
+</div>

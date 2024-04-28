@@ -1,0 +1,59 @@
+package com.vashtu.app.service;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.vashtu.app.model.Customer;
+import com.vashtu.app.repository.CMRepository;
+
+@Service
+public class CMServiceImpl implements CMService {
+	
+	@Autowired
+	CMRepository cmrepo;
+	
+	@Autowired
+    private RestTemplate restTemplate;
+
+	@Override
+	public List<Customer> getAllLoanApplicationData() {
+		String url = "http://localhost:8088/getAllLoanApplicationData";
+
+		// Make REST API call to fetch the response as a JSON string
+        ResponseEntity<String> responseEntity = restTemplate.getForEntity(url, String.class);
+
+        // Check if the response is successful (HTTP status code 200)
+        if (responseEntity.getStatusCode() == HttpStatus.OK) {
+            // Convert JSON string to an array of Customer objects
+            String responseBody = responseEntity.getBody();
+            ObjectMapper mapper = new ObjectMapper();
+            Customer[] customersArray = null;
+            try {
+                customersArray = mapper.readValue(responseBody, Customer[].class);
+            } catch (JsonProcessingException e) {
+                throw new RuntimeException("Failed to parse loan application data", e);
+            }
+
+            // Convert array to List
+            List<Customer> customerList = Arrays.asList(customersArray);
+
+            // For debugging purposes
+            System.out.println(customerList);
+
+            return customerList;
+        } else {
+            // Handle the case where the API request fails
+            throw new RuntimeException("Failed to retrieve loan application data");
+        }
+    }
+
+}

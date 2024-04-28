@@ -1,0 +1,16 @@
+package com.vashtu.app.service;
+
+import org.springframework.stereotype.Service;
+
+import com.vashtu.app.model.EnquiryForm;
+
+@Service
+public class EnquiryServiceimpl implements EnquiryService{
+
+	@Override
+	public void saveCustomerEnquiryinfo(EnquiryForm enquiry) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

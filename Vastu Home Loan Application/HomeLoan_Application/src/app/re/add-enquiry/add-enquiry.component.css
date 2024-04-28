@@ -1,0 +1,65 @@
+
+.container {
+    
+   
+    margin-right: 80px;
+    transform: translate(-50%, -50%); /* Center it perfectly */
+    z-index: 9999; /* Ensure it appears on top of other content */
+    width: 500px; /* Adjust width as needed */
+    background-color: #00000074; /* Background color */
+    padding-top: 0px;
+    padding-bottom: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border: 1px solid #ccc; /* Border */border-radius: 10px;
+    box-shadow: 0px 2px 6px 6px black ;/* Box shadow for depth */
+    margin-top: 280px;
+    
+}
+.step-2-container {
+  
+ 
+  
+  padding-bottom: -20px; /* Add bottom padding */
+}
+  h2{
+    text-align: center;
+    font-stretch: extra-expanded;
+    color: black;
+    text-shadow: 0px 2px 2px rgb(227, 245, 255);
+  }
+  button{
+    margin-top: 15px;
+  }
+  label{
+    margin-top: 10px;
+    color: beige;
+  }
+  input{
+    background-color: rgba(255, 255, 255, 0.699);
+  }
+  .input-row{
+    display: flex;
+    justify-content: space-between;
+  } 
+  .input-column{
+    width: 48%; /* Adjust width as needed */
+  } 
+  .input-column label{
+    display: block;
+    margin-bottom: 5px;
+  }
+  .form-detail-container {
+    /* Optional: You can adjust container styles as needed */
+    margin-bottom: 5px;
+  }
+  .form-detail-inline {
+    display: inline-block;
+    width: 45%; /* Adjust width as needed */
+    margin-right: 5%; /* Adjust spacing between elements */
+    vertical-align: top; /* Align elements vertically */
+  }
+  .form-detail-inline:last-child {
+    margin-right: 0; /* Remove right margin from the last element */
+  }
+  

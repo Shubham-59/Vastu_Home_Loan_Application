@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="slider">
+     <div class="slide" *ngFor="let image of images">
+        <img [src]="image.url" alt="{{ image.alt }}" width="100%">
+        <div class="text">
+          <h1>{{ image.title }}</h1>
+          <p>{{ image.description }}</p>
+        </div>
+      </div> 
+    </div>
+</div>  

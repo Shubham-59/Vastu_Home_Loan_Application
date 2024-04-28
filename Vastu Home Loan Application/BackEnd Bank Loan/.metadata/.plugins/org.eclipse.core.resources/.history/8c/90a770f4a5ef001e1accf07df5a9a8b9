@@ -1,0 +1,5 @@
+package com.vashtu.app.service;
+
+public interface EnquiryService {
+
+}

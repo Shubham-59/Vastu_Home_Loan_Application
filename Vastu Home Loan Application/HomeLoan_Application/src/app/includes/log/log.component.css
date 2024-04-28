@@ -1,0 +1,205 @@
+
+/* .bg {
+  background-image: url('/assets/img/istockphoto-1368151370-1024x1024.jpg');
+  height: 100vh; /* Set the height to viewport height */
+  /* background-position: center; */
+  /* background-size: cover; This will make the image cover the full browser area */
+  /* width: 100%; Make the background image width 100% of the viewport */
+/* } */ 
+  /* .login{
+    
+    display: flex;
+        justify-content: space-around;
+             
+  }
+  .loginBox {
+    
+    margin-top: 40px;
+    font-family: "Open Sans";
+    border-top: 15px solid rgba(0, 0, 0, 1);
+    box-shadow: 10px 14px 16px rgba(0, 0, 255, 0.5);
+    width: 340px;
+    background-color: #3b3b3b;
+    padding: 50px 40px 20px 40px;
+    .header {
+      color: white;
+      font-family: "Open Sans";
+      font-weight: 600;
+      font-size: 1.6em;
+      margin-bottom: 20px;
+    }
+    input {
+      width: calc(100% - 22px);
+      line-height: 50px;
+      margin-bottom: 15px;
+      border: 1px solid rgba(81, 81, 81, 1);
+      background-color: #2b2b2b;
+      font-family: "Open Sans", FontAwesome;
+      font-size: 18px;
+      color: #9f9f9f;
+      padding-left: 20px;
+      font-weight: 400;
+    }
+    .button {
+      border: none;
+      border-radius: 0px;
+      background: #8b83be;
+      border-bottom: 10px solid #7167ac;
+      width: 100%;
+      color: #fff;
+      font-size: 18px;
+      line-height: 45px;
+    }
+    p {
+      font-size: 18px;
+      color: #6d6d6d;
+    }
+    a {
+      color: #c2c2c2;
+      text-decoration: none;
+      font-family: "Open Sans";
+      &:first-child {
+        padding-right: 20px;
+      }
+      &:last-child {
+        padding-left: 20px;
+      }
+    }
+  }
+  
+  .slider {
+    width: 370px;
+    line-height: 80px;
+    background-color: #3b3b3b;
+    font-size: 19px;
+    padding-left: 50px;
+    color: #fff;
+    position: relative;
+    border-top: 1px solid rgba(83, 83, 83, 1);
+    &::before {
+      content: "";
+      display: block;
+      transition: right 0.1s ease-in-out;
+      top: 0px;
+      right: -16px;
+    }
+    &::after {
+      content: "";
+      display: block;
+      transition: right 0.1s ease-in-out;
+      top: 0px;
+      right: -24px;
+    }
+    &.active {
+      width: 362px;
+      background-color: #2b2b2b;
+      border-right: 8px solid #52c3ed;
+      color: #52c3ed;
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 00px;
+        width: 0px;
+        z-index: 0;
+        right: -24px;
+        border-color: transparent #2b2b2b;
+        border-style: solid;
+        border-width: 40px 0px 40px 24px;
+      }
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 0px;
+        width: 0px;
+        z-index: -1;
+        right: -32px;
+        border-color: transparent #52c3ed;
+        border-style: solid;
+        border-width: 40px 0px 40px 24px;
+        top: 0px;
+      }
+    }
+  }
+   */
+
+   body {
+    margin: 0;
+    padding: 0;
+    background: url(https://picsum.photos/2500/1500?image=1041);
+    background-size: cover;
+    font-family: sans-serif;
+  }
+  
+  .box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25rem;
+    padding: 2.5rem;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 0.625rem;
+  }
+  
+  .box h2 {
+    margin: 0 0 1.875rem;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .box .inputBox {
+    position: relative;
+  }
+  
+  .box .inputBox input {
+    width: 100%;
+    padding: 0.625rem 0;
+    font-size: 1rem;
+    color: #fff;
+    letter-spacing: 0.062rem;
+    margin-bottom: 1.875rem;
+    border: none;
+    border-bottom: 0.065rem solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  
+  .box .inputBox label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.625rem 0;
+    font-size: 1rem;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.5s;
+  }
+  
+  .box .inputBox input:focus ~ label,
+  .box .inputBox input:valid ~ label,
+  .box .inputBox input:not([value=""]) ~ label {
+    top: -1.125rem;
+    left: 0;
+    color: #03a9f4;
+    font-size: 0.75rem;
+  }
+  
+  .box input[type="submit"] {
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color: #03a9f4;
+    padding: 0.625rem 1.25rem;
+    cursor: pointer;
+    border-radius: 0.312rem;
+    font-size: 1rem;
+  }
+  
+  .box input[type="submit"]:hover {
+    background-color: #1cb1f5;
+  }
+  

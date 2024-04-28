@@ -1,0 +1,68 @@
+/* General styles for the navigation (nav) section */
+nav {
+    display: flex;
+    padding: 20px;
+    box-shadow: 0px 7px 10px 1px rgba(0, 0, 0, 0.3);
+    height: 70px;
+    justify-content: space-between;
+    align-items: center; /* Vertically center align items */
+  }
+  
+  /* Logout button positioning */
+  button {
+    float: right;
+  }
+  
+  /* Styling for all buttons (using Bootstrap classes) */
+  .btn {
+    color: #fff;
+    background-color: #dc3545; /* Bootstrap danger color */
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  /* Hover effect for buttons */
+  .btn:hover {
+    background-color: #c82333; /* Darker shade on hover */
+  }
+  
+  /* Styling for profile image (img) */
+  img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Add transition for box-shadow and transform */
+  }
+  
+  /* Enlarge profile image on hover */
+  img:hover {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Apply a larger box shadow on hover */
+    transform: scale(1.1); /* Enlarge the image by 10% on hover */
+  }
+  
+  /* Styling for user information container */
+  .user-info {
+    text-align: center;
+  }
+  
+  /* Styling for username */
+  .username {
+    font-size: 18px;
+    font-weight: bold;
+    color: #424242;
+    margin: 5px 0;
+  }
+  
+  /* Styling for user type */
+  .user-type {
+    font-size: 16px;
+    color: #777777;
+    font-weight: bold;
+  }
+  

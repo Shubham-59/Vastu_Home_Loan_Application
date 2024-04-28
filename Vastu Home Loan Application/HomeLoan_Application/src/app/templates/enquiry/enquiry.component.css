@@ -1,0 +1,87 @@
+
+.container {
+  position: absolute; /* Position the container relative to the viewport */
+  top: 48%; /* Place it vertically centered */
+  left: 50%; /* Place it horizontally centered */
+  transform: translate(-50%, -50%); /* Center it perfectly */
+  z-index: 9999; /* Ensure it appears on top of other content */
+  width: 500px; /* Adjust width as needed */
+  background-color: #00000074; /* Background color */
+  padding-top: 0px;
+  padding-bottom: 5px;
+  padding-left: 25px;
+  margin-top: 70px;
+  padding-right: 25px;
+  border: 1px solid #ccc; /* Border */border-radius: 10px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+}
+h2{
+  text-align: center;
+  font-stretch: extra-expanded;
+  color: black;
+  text-shadow: 0px 2px 2px rgb(227, 245, 255);
+}
+button{
+  margin-top: 15px;
+}
+label{
+  margin-top: 10px;
+  color: beige;
+}
+input{
+  background-color: rgba(255, 255, 255, 0.699);
+}
+.input-row{
+  display: flex;
+  justify-content: space-between;
+} 
+.input-column{
+  width: 48%; /* Adjust width as needed */
+} 
+.input-column label{
+  display: block;
+  margin-bottom: 5px;
+}
+.form-detail-container {
+  /* Optional: You can adjust container styles as needed */
+  margin-bottom: 5px;
+}
+.form-detail-inline {
+  display: inline-block;
+  width: 45%; /* Adjust width as needed */
+  margin-right: 5%; /* Adjust spacing between elements */
+  vertical-align: top; /* Align elements vertically */
+}
+.form-detail-inline:last-child {
+  margin-right: 0; /* Remove right margin from the last element */
+}
+.btn-secondary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: #28a745;
+  color: #fff;
+}.btn-success {
+  background-color: #ffc107;
+  color: #fff;
+}
+
+.text-danger {
+  color: red;
+  margin-top: 5px;
+}
+.form-detail-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.form-detail-inline {
+  width: 48%;
+}
+
+.form-detail {
+  margin-bottom: 10px;
+}

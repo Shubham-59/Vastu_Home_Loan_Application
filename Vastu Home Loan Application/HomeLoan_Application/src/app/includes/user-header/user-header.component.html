@@ -1,0 +1,13 @@
+<nav>
+     <div>
+         <img [src]="'data:image/jpeg;base64,'+user.profileImage" alt="Profile image">
+     </div>
+     <div class="user-info">
+         <p class="username">{{user.employeeFullName}}</p>
+         <p class="user-type">{{user.userType}}</p>
+     </div>
+     <div>
+         <button class="btn btn-danger" routerLink="/">Log Out</button>
+     </div>
+ </nav>
+ 

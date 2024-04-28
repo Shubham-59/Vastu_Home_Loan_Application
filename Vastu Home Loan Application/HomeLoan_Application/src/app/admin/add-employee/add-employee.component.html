@@ -1,0 +1,40 @@
+<div class="bg">
+    <form [formGroup]="userRegistrationForm" (ngSubmit)="onSubmitUserDetailes()">
+    <h2>Employee Registration</h2>
+    <div class="form-group">
+        <label for="employeeFullName">Full Name:</label>
+        <input type="text" id="employeeFullName" formControlName="employeeFullName" required>
+    </div>
+    <div class="form-group">
+        <label for="employeeEmail">Email:</label>
+        <input type="email" id="employeeEmail" formControlName="employeeEmail" required>
+    </div>
+    <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" formControlName="username" required>
+    </div>
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" formControlName="password" required>
+    </div>
+    <div class="form-group">
+        
+        <label for="uploadImage">Upload Image:</label>
+        <img [src]="profile" width="100px">
+        <input type="file" (change)="onSelectProfile($event)">
+        
+    </div>
+    
+    <div class="form-group">
+        <label for="userType">User Type:</label>
+        <select id="userType" formControlName="userType">
+            <option value="OE">OE</option>
+            <option value="RE">RE</option>
+            <option value="CM">CM</option>
+            <option value="RE">AE</option>
+        </select>
+    </div>
+    <button class="btn btn-warning" onclick="this.classList.add('clicked')">Submit</button>
+
+</form>
+</div>

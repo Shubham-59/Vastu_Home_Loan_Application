@@ -1,0 +1,29 @@
+<table>
+    <thead>
+        <td>Id</td>
+        <td>Name</td>
+       <td>Mobile No</td>
+        <td>PanCard</td>
+        <td>Loan Amount</td>
+        <td>Status</td>
+        <td>Customer Action</td>
+    </thead>
+    <tbody *ngFor="let p of passLoanList">
+        <td>{{p.customerId}}</td>
+        <td>{{p.firstName}}</td>
+       <td>{{p.mobileNumber}}</td>
+        <td>{{p.panCard}}</td>
+        <td>{{p.requestedLoanAmount}}</td>
+        <td>{{p.status}}</td>
+       
+        
+       
+        <td class="action-cell">
+            <div class="button-container">
+                <button class="approve-btn" (click)="senctionloan(p.customerId)">Loan Senction </button>
+                <i class="fa fa-check-square-o" aria-hidden="true"></i>
+               
+            </div>
+        </td>
+    </tbody>
+</table>

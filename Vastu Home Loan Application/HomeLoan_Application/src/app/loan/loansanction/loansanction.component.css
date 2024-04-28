@@ -1,0 +1,33 @@
+.main-container {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .inline {
+    display: flex;
+    align-items: center;
+  }
+  
+  .inline label {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  .btn-group {
+    margin-left: 0;
+  }
+  
+  button.btn.btn-success {
+    padding: 5px 20px;
+    font-size: 14px;
+  }

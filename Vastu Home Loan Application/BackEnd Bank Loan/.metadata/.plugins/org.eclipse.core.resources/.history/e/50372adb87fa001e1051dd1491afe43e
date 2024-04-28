@@ -1,0 +1,102 @@
+package com.vashtu.app.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.vashtu.app.enums.Status;
+import com.vashtu.app.model.AllPersonalDocuments;
+import com.vashtu.app.model.Customer;
+import com.vashtu.app.model.CustomerAddress;
+import com.vashtu.app.model.EducationalInfo;
+import com.vashtu.app.model.FamilyDependentInformation;
+import com.vashtu.app.service.customerService;import jakarta.ws.rs.ApplicationPath;
+import jakarta.ws.rs.PathParam;
+
+@CrossOrigin("*")
+@RestController
+public class CustomerController {
+
+	@Autowired private customerService custService;
+	
+	@PostMapping("/All_Form_Data")
+	public ResponseEntity<Customer> createCustomerDetails
+	
+	(		@RequestPart("customerData") String CustomerDataJson,
+			//@RequestPart("allPersonalDoc") AllPersonalDocuments doc
+			//allpersonalDoc contains many RequestParat
+		
+			@RequestPart("addproof") MultipartFile addressProof,
+			@RequestPart("pan") MultipartFile pancard,
+			@RequestPart("inctax") MultipartFile incomeTax,
+			@RequestPart("adhar") MultipartFile aadharCard,
+			@RequestPart("pic") MultipartFile photo,
+			@RequestPart("sign") MultipartFile signature,
+			@RequestPart("salaryslip") MultipartFile salarySlips,
+			@RequestPart("mortPropertyproof") MultipartFile mortgagePropertyProof,
+			@RequestPart("mortgageinsuance") MultipartFile mortgagePropertyInsurance,
+			@RequestPart("salaryslips") MultipartFile professionSalarySlips)
+	{
+		
+		
+	Customer customerData=custService.saveCustomerData(CustomerDataJson,addressProof,pancard,incomeTax,aadharCard,photo,
+				signature,salarySlips,mortgagePropertyProof,mortgagePropertyInsurance,professionSalarySlips);
+		
+		return new ResponseEntity<Customer>(customerData, HttpStatus.OK);
+	}
+	
+	@GetMapping("/getAllLoanApplicationData")
+	public ResponseEntity<List<Customer>> getAllLoanApplicationData()
+	{
+		return new ResponseEntity<List<Customer>>(custService.getAllLoanApplicationData(),HttpStatus.OK);
+	}
+	
+	@GetMapping("/getById/{customerId}")
+	public ResponseEntity<Customer> getById(@PathVariable int customerId)
+	{
+		
+		Customer cus=custService.getCustomerById(customerId);
+		return new ResponseEntity<Customer>(cus,HttpStatus.OK);
+	}
+	@GetMapping("/getAllLoanApproved/{status}")
+	public ResponseEntity<List<Customer>> getAllApprovedLoan(@PathVariable String status) {
+	    try {
+	        Status loanStatus = Status.valueOf(status); // Convert status string to enum
+	        List<Customer> approvedCustomers = custService.getAllApprovedLoanApplication(loanStatus);
+	        return ResponseEntity.ok(approvedCustomers);
+	    } catch (IllegalArgumentException e) {
+	        // Handle invalid status string (e.g., status does not match any enum constant)
+	        return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+	    } catch (Exception e) {
+	        // Handle other exceptions (e.g., database access errors)
+	        e.printStackTrace();
+	        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+	    }
+	}
+
+ 	
+	@PutMapping("/approvedLoan/{id}")
+	public ResponseEntity<Customer> updateStatusApprovedLoan(@PathVariable("id") int id) {
+	    try {
+	        Customer updatedCustomer = custService.updateStatusApprovedLoan(id);
+	        if (updatedCustomer != null) {
+	            return ResponseEntity.ok(updatedCustomer);
+	        } else {
+	            return ResponseEntity.notFound().build(); // Customer not found
+	        }
+	    } catch (Exception e) {
+	        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build(); // Server error
+	    }
+	}
+}

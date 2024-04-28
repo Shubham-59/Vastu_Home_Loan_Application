@@ -1,0 +1,5 @@
+package com.vashtu.app.model;
+
+public class Enquiry {
+
+}

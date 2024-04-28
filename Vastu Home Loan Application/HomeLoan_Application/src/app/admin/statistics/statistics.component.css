@@ -1,0 +1,72 @@
+/* General container styles */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+ 
+}
+
+/* Enquiry count card styles */
+.enquiry-count-card {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styles */
+h2 {
+  text-align: center;
+  color: #777777;
+  font-weight: bold;
+  background-color: wheat;
+  
+}
+
+/* Enquiry count box styles */
+.enquiry-count-box {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  font-weight: boldx  ;
+}
+
+/* Count box styles */
+.enquiry-count-box > div {
+  margin: 10px;
+  text-align: center;
+  width: 200px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Total count box */
+.pending-count {
+  background-color: #007bff; /* Blue */
+  color: #fff;
+}
+
+/* Approved count box */
+.approved-count {
+  background-color: #28a745; /* Green */
+  color: #fff;
+  
+}
+
+/* Rejected count box */
+.rejected-count {
+  background-color: #dc3545; /* Red */
+  color: #fff;
+}
+
+/* Hover effect */
+.enquiry-count-box > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+p{
+  font-size: 22px;
+}

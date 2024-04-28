@@ -1,0 +1,33 @@
+    <body>
+    <table>
+        <thead>
+            <tr>
+                <th>User Id</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>User-Name</th>
+                <th>Password</th>
+                <th>Profile</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let u of users">
+                <td>{{u.userId}}</td>
+                <td>{{u.employeeFullName}}</td>
+                <td>{{u.employeeEmail}}</td>
+                <td>{{u.username}}</td>
+                <td>{{u.password}}</td>
+            <td>
+                <img [src]="'data:image/jpeg;base64,'+u.profileImage" width="90" height="90">     
+            </td>
+            
+
+            <td class="action-icons">
+                <i class="fa fa-pencil-square" aria-hidden="true" (click)="onUpdateEmployeeDetailes(u)"></i>
+                <i class="fa fa-trash-o" aria-hidden="true" (click)="deleteEmployee(u.userId)"></i>
+            </td>
+            </tr>
+        </tbody>
+    </table>
+    </body>

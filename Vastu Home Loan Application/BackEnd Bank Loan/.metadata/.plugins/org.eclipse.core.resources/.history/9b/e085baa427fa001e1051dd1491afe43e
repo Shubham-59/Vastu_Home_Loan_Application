@@ -1,0 +1,30 @@
+package com.vashtu.app.model;
+
+import com.vashtu.app.enums.Status;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotEmpty;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+
+public class Enquiry {
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	private int enquiryId;
+   
+    private String firstName;
+    
+    @Enumerated(EnumType.STRING)
+    private Status status; ///set by default  value at the time of post API
+}

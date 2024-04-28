@@ -1,0 +1,33 @@
+
+<h5 class="h">Loan Enquiries For Cibil Check -</h5>
+<table class="table table-bordered table-striped">
+    
+    <thead>
+      <tr>
+        <th>User ID</th>
+        <th>Name</th>
+        <th>Mobile No</th>
+        <th>Email</th>
+        <th>Pan Card Number</th>
+        <th>Loan Amount</th>
+        <th>Action</th>
+        <th>Forward to RE</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let e of enquiry">
+      <tr>
+        <td>{{e.enquiryId}}</td>
+        <td>{{e.firstName}} {{e.lastName}}</td>
+        <td>{{e.mobileNumber}}</td>
+        <td>{{e.email}}</td>
+        <td>{{e.panCard}}</td>
+        <td>{{ e.requestedLoanAmount | currency : '₹' }}</td>
+        <td>
+          <button class="btn btn-success"(click)="cibilScoreCheck(e.enquiryId)">Cibil Score</button>
+        </td>
+        <td class="btn1">
+          <i class="fa fa-forward" aria-hidden="true" (click)=" forwardToRE(e)"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>

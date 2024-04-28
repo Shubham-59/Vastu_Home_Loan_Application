@@ -1,0 +1,29 @@
+.location-container {
+    text-align: center; /* Centering the content */
+    margin: 20px; /* Add some margin around the container */
+    border: 2px solid #ccc;
+    border-color: tomato;
+    
+}
+
+h1 {
+    color: #333; /* Dark grey color for the text */
+    font-family: Arial, sans-serif; /* Arial font, with a fallback to sans-serif */
+}
+
+.map-link {
+    display: inline-block; /* Allows setting padding and margins */
+    background-color: #007bff; /* Bootstrap primary color for example */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Top/bottom and left/right padding */
+    text-decoration: none; /* Remove underline from link */
+    border-radius: 5px; /* Rounded corners */
+    font-family: Arial, sans-serif; /* Arial font, with a fallback to sans-serif */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Slight shadow for depth */
+    transition: background-color 0.3s ease; /* Smooth background color transition on hover */
+    border: 2px solid #007bff;
+}
+
+.map-link:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

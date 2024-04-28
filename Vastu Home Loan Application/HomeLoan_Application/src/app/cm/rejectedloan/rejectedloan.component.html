@@ -1,0 +1,26 @@
+<table>
+    <thead>
+        <td>C_Id</td>
+        <td>Name</td>
+       <td>Mobile No</td>
+        <td>PanCard</td>
+        <td>Loan Amount</td>
+        <td>Status</td>
+       
+    </thead>
+    <tbody *ngFor="let p of loanStatuslist">
+        <td>{{p.customerId}}</td>
+        <td>{{p.firstName}}</td>
+       <td>{{p.mobileNumber}}</td>
+        <td>{{p.panCard}}</td>
+        <td>{{p.requestedLoanAmount}}</td>
+        <td style="color: #cc3300; background-color: #ffcc00; font-weight: bold;">{{p.status}}</td>
+       
+        
+       
+
+               
+            
+        
+    </tbody>
+</table>

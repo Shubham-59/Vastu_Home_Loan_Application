@@ -1,0 +1,18 @@
+package com.vashtu.app.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.vashtu.app.enums.Status;
+import com.vashtu.app.model.Customer;
+
+public interface customerServiceRepository extends JpaRepository<Customer, Integer> {
+
+	List<Customer> findAllByStatus(Status loanStatus);
+
+	List<Customer> findByStatus(Status status);
+
+//	List<Customer> findByStatus(Status status);
+
+}

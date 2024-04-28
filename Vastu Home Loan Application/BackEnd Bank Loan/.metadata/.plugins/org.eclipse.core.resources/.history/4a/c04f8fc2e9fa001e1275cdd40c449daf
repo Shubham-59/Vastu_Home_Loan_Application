@@ -1,0 +1,16 @@
+package com.vashtu.app.repository;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.vashtu.app.enums.Status;
+import com.vashtu.app.model.EnquiryForm;
+
+public interface OERepository extends JpaRepository<EnquiryForm, Integer> {
+
+	
+
+	
+}

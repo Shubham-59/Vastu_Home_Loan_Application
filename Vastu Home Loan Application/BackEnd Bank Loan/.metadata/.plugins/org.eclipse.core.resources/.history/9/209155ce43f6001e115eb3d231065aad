@@ -1,0 +1,126 @@
+package com.vashtu.app.service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.vashtu.app.enums.Status;
+import com.vashtu.app.model.Cibil;
+import com.vashtu.app.model.EnquiryForm;
+import com.vashtu.app.repository.OERepository;
+
+@Service
+public class OEServiceImpl implements OEService {
+	
+	
+
+	@Autowired
+	private OERepository oeRepository;
+
+	@Autowired
+    private RestTemplate restTemplate;
+	
+	
+	
+	 public List<EnquiryForm> getAllForwardEnquiryByRe(Status statusEnum) {
+	        List<EnquiryForm>eList=  oeRepository.findAllByStatus(statusEnum);
+	        List<EnquiryForm> forwardList=new ArrayList<>();
+	        if(!eList.isEmpty())
+	        {
+	        	
+	        	for(EnquiryForm list:eList) {
+	        		
+	        	  forwardList.add(list);
+	        	}
+	        	
+	        	
+	        }
+	        return forwardList;
+	
+}@Override
+		public Cibil checkCibilScoreById(int enquiryId) {
+	Optional<EnquiryForm>opEnquiry=oeRepository.findById(enquiryId);
+	if(opEnquiry.isPresent()) 
+	{
+		
+		EnquiryForm enquiry=opEnquiry.get();
+		String url="http://localhost:8082/cibil/getCibilScore";
+		Cibil cibil=restTemplate.getForObject(url,Cibil.class);
+		System.out.println(cibil.getCibilScore());
+		 enquiry.setCibil(cibil);
+		 if(cibil.getCibilScore()<=650) {
+			 enquiry.getCibil().setStatus("Rejected");
+			 enquiry.getCibil().setRemark("Poor Cibil Score");
+		 }else {
+			 enquiry.getCibil().setStatus("Approved");
+			 enquiry.getCibil().setRemark("Good Cibil Score");
+			 
+		 }
+		 
+		 oeRepository.save(enquiry);
+		return  cibil;
+	}
+	return null;
+}
+
+//	@Override
+//	public EnquiryForm getForwaredEnquiryByIdForCibilCheck(int enquiryId,Cibil cibil) {
+//		
+//		Optional<EnquiryForm>opEnquiry=oeRepository.findById(enquiryId);
+//		if(opEnquiry.isPresent()) 
+//		{
+//			
+//			EnquiryForm enquiryId_cibilCheck=opEnquiry.get();
+////			String url="http://localhost:8082/cibil/getCibilScore";
+////			Cibil cibil=restTemplate.getForObject(url,Cibil.class);
+//			
+//	       
+//			
+//			if(cibil!=null)
+//			{		
+//				if (cibil.getCibilScore() > 650)
+//			{
+//				enquiryId_cibilCheck.setStatus(Status.Approved);
+//				
+//				  System.out.println("Enquiry ID " + enquiryId + " - Approved: Cibil Score: " + cibil.getCibilScore());
+//				
+//			}else {
+//				enquiryId_cibilCheck.setStatus(Status.Rejected);
+//				System.out.println("Enquiry ID " + enquiryId + " - Rejected: Cibil Score: " + cibil.getCibilScore());
+//				
+//			}
+//				// Save the updated EnquiryForm
+//	            return oeRepository.save(enquiryId_cibilCheck);
+//			}
+//		}
+//		return null;
+//	}
+
+@Override
+public EnquiryForm getForwaredEnquiryByIdForCibilCheck(int enquiryId) {
+    Optional<EnquiryForm> opEnquiry = oeRepository.findById(enquiryId);
+   
+    if (opEnquiry.isPresent()) {
+        EnquiryForm enquiry = opEnquiry.get();
+      
+        if (enquiry.getCibil() != null) {
+            if (enquiry.getCibil().getCibilScore() > 650) {
+                enquiry.setStatus(Status.Approved);
+                System.out.println("Approved Your Cibil Is-"+enquiry.getCibil().getCibilScore());
+            } else {
+                enquiry.setStatus(Status.Rejected);
+                System.out.println("Rejected Your Cibil Is-"+enquiry.getCibil().getCibilScore());
+            }
+            // Save the updated EnquiryForm
+            return oeRepository.save(enquiry);
+        }
+    }
+    return null;
+}
+
+}

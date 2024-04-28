@@ -1,0 +1,20 @@
+package com.vashtu.app.model;
+
+
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+public class Sanction {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int sanctionId;
+	private String sanctionDate;
+	private double loanAmountSanctioned;
+	private double rateOfInterest;
+	private int loanTenure;
+	private double monthlyEmiAmount;
+	@Lob
+	@Column(length = 999999999)
+	private byte[] sanctionLetter;
+}

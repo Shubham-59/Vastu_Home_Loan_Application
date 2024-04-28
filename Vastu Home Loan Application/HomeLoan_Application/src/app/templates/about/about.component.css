@@ -1,0 +1,422 @@
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+.about {
+    background-color: lightgray;
+    width: 100%; /* Set to 100% */
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.container {
+    width: 100%; /* Set to 100% */
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+}
+
+img{
+    width: 90%;
+    grid-gap:20px;
+}
+img:hover{
+    transform: translateZ(5px);
+    transition:transform 3s;
+}
+.text{
+    position: absolute;
+    top: 25%;
+    color:black;
+    margin-left: 300px;
+}
+.text1{
+    padding:5px;
+    margin-left:500px;
+    text-align: center;
+    color:brown;
+    font-weight:bold ;
+}
+.text2
+{
+   position:absolute;
+   color: brown;
+   left:350px;
+   top: 300px;
+   font-size:20px;
+}
+.text3
+{
+   position:absolute;
+   color:brown;
+   left:150px;
+   top: 20px;
+   font-size:20px;
+}
+.section-header{
+    margin-left: 0px;
+}
+.slider{  
+  place-items: center;
+  width: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+}
+
+.card {
+    background-color: #a8c4df; /* Background color */
+    border:  #f8f9fa; /* Border color */
+    border-radius: 8px; /* Border radius */
+    width: 100%; /* Set the width to 100% to ensure all cards occupy the same width */
+    height: 100%; /* Set the height to 100% to ensure all cards occupy the same height */
+    padding: 0; /* Set padding to create space inside the card */
+   /* margin: 10px;  */
+}
+.card:hover{
+    background-color:aliceblue;
+    border-radius: 10px;
+    color: aqua;
+}
+.card1
+{
+    background-color: #608db9; /* Background color */
+    border:  #f8f9fa; /* Border color */
+    border-radius: 8px; /* Border radius */
+    width: 100%; /* Set the width to 100% to ensure all cards occupy the same width */
+    height: 100%; /* Set the height to 100% to ensure all cards occupy the same height */
+    padding: 20px; /* Set padding to create space inside the card */
+    margin: 10px;   
+}
+.card1:hover{
+    background-color: #869bb0;
+    border-radius: 10px;
+    color: #ac1616;
+}
+
+.card img{
+    height: 150px;
+    width:150px;
+margin-left: 120px;
+}
+
+/* Style the card title */
+.card-title {
+    color: #121111; /* Text color */
+     text-align: center;
+}
+
+/* Style the card text */
+.card-text {
+    color: #0f0d0d; 
+    line-height: 1.5; 
+}
+
+/* Style the button inside the card */
+.card .btn {
+    background-color: #ac1616; 
+    color: #fff; 
+    border: none; 
+    
+}
+
+/* Style the button on hover */
+.card .btn:hover {
+    background-color: #030406; 
+}
+.purpose heading , h3
+{
+    /* margin-left:600px; */
+    text-align: center;
+    margin-top: 50px;
+    font-weight: bold;
+}
+.purpose heading , h3:hover
+{
+   color: #0873de;
+}
+.purpose heading , p
+{
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+.first img
+{
+    width:1000px;
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 50px;
+}
+.first img :hover
+{
+    color:red;
+}
+.heading,h3{
+    font-family: 'Times New Roman';
+}
+.our services{
+
+    width:1000px;
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 50px;
+}
+.Vission header{
+    margin-left: 1000px;
+}
+.Vission header:hover{
+    color: #036bd3;
+}
+.vission img{
+    height: 80px;
+    width:80px;
+    margin: 10px;
+} 
+li{
+    text-align: center;
+    margin-top: -70px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.Mission img{
+    height: 80px;
+    width:80px;
+    margin:10pxpx;
+}
+.mission_icon img {
+    
+    margin-left: 900px;
+    margin-top: -160px;
+    width: 290px;
+    height: 210px;
+}
+.section-header:hover{
+    color: #03315f;
+}
+.mission_icon:hover{
+    animation: infinite;
+}
+.Apply img {
+    height: 300px;
+    width: 300px;
+    margin-top: 50px;
+    margin-left: 30px;
+    border-radius: 50%; /* Convert image to a circle */
+
+}
+
+
+.Apply body,h5{
+    margin-left:30px;
+    margin-top: 10px;
+    font-weight:bolder;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.Apply h5:hover {
+    color: rgb(10, 0, 0); /* Change text color on hover */
+}
+.circle {
+    display: flex; /* Make the container flexbox */
+    justify-content: space-between; /* Align items with space between them */
+}
+
+.Apply {
+    flex: 1; /* Each section takes equal space */
+}
+
+.Apply img {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%; /* Convert image to a circle */
+}
+
+.Apply h5 {
+    margin-top: 10px;
+}
+
+.Apply a.btn {
+    margin-top: 10px;
+    display: inline-block;
+}
+.Apply1{
+    margin-right: 230px;
+}
+.footer{
+    max-width: 100%;
+    background: #00000019;
+    color: #00000093;
+    height: 400px;
+    position: relative;
+    margin-top:100px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.502);
+}
+.footer .footer-content{
+   
+    height: 350px;
+  display: flex;
+ 
+}
+.footer .footer-content .footer-section{
+  flex: 1;
+  
+}
+.footer .footer-content h1,
+.footer .footer-content h2{
+    
+    padding-top: 20px;
+    padding-left: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    color:#00040a;
+    font-weight: bold;
+    
+}
+
+.footer .footer-content .about h5 {
+    font-style: italic;
+    font-weight: 100;
+    margin-left: 10px;
+    line-height: 1.5; /* Adjust line height to create space between sentences */
+    margin-top: 30px;
+}
+.footer .footer-content .about .contact span {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    margin-left: 50px;
+    transition: color 0.3s ease; /* Adding transition for smooth effect */
+}
+
+.footer .footer-content .about .contact span:hover {
+    color:#05f7ff; /* Change color on hover */
+}
+
+.footer .footer-content .about .socials {
+    display: flex; /* Add this line */
+}
+
+.footer .footer-content .about .socials a h2 {
+    width: 45px;
+    height: 41px;
+    padding-top: 5px;
+    padding-right: 5px;
+    text-align: center; /* Corrected spelling of center */
+    display: inline-block;
+    font-size: 1.3em;
+    border-radius: 5px;
+    transition: all .3s;
+}
+
+/* .footer .footer-content .about .socials h2:hover{
+   color:#05f7ff;
+   transition: all .3s;  */
+ 
+.footer .footer-content .links ul a {
+    display: block;
+    margin-bottom: 5px; /* Reduce the bottom margin */
+    font-size: 1.2em;
+    margin-top: 5px; /* Reduce the top margin */
+    margin-left: 10px;
+}
+.footer .footer-content .links  {
+    margin-top: 0px;
+    padding-inline-start: 0;
+}
+
+.footer .footer-content .links ul a:hover{
+    color: white;
+    margin-left: 15px;
+    transition: all .3s;
+}
+.footer .footer-bottom{
+    background: #343a40;
+    color: #686868;
+    height: 50px;
+    width: 100%;
+    text-align: centre;
+    justify-content: center;
+    position: absolute;
+    left: 0px;
+    padding-top: 20px;
+    bottom: 0px;
+    
+}
+.footer .footer-content .links h2{
+    padding-top: 20px;
+}
+.footer .footer-content .contact h2{
+    padding-top: 20px;
+    margin-left: 100px;
+}
+.footer .footer-content .contact h5 {
+    font-style: italic;
+    font-weight: 100;
+    margin-left: 10px;
+    line-height: 2.5; 
+}
+footer .footer-bottom marquee{
+    font-size:1000px;
+}
+
+.box-deco{
+    box-shadow: 0px 10px 20px 0px black;
+    padding-bottom: 10px;
+    background: lightpink;
+  }
+  .text-deco img{
+    width: 80px;
+    height: 90px;
+    padding-top: 10px;
+    padding-bottom: -30px;
+    
+  }
+  .text-deco h2{
+    padding-left: 150px;
+    margin-top: -60px;
+  }
+  .text-deco h2  p{
+    padding-left: 150px;
+    margin-top: -60px;
+    padding-bottom: 10px;
+  }
+  .bg-body {
+    background-color: lightpink; /* Set your desired background color here */
+    background-color: lightgoldenrodyellow;
+    height: 120px;
+  }
+  .ooo{
+    margin-left:120px;
+  }
+  .aaa
+{
+    margin-top: 50px;
+    margin-left:120px;
+}
+.bbb{
+    margin-top:50px;
+    margin-left:120px;
+}
+.socials a {
+    display: flex;
+    color: #0d41b0; /* Facebook blue color */
+}
+.instagram{
+    color: rgb(170, 5, 60);
+}
+.youtube{
+    color: darkred;
+}
+.whatsapp{
+    color: green;
+}
+h2{
+    margin: 0;
+}
+section{
+   max-width: 100%;
+}

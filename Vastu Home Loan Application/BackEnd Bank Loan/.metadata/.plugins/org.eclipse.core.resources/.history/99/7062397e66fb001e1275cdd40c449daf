@@ -1,0 +1,48 @@
+package com.vashtu.app.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.vashtu.app.model.Customer;
+import com.vashtu.app.model.Sanction;
+import com.vashtu.app.repository.SanctionRepository;
+
+@Service
+public class SanctionServiceImpl implements SanctionService {
+
+	@Autowired
+	private SanctionRepository sanctionRepo;
+	
+	@Autowired
+	private RestTemplate rest;
+	@Override
+	public Sanction saveLoanSanctionInfo() {
+	String url="http://localhost:8083/getAllLoanApplicationData";
+	 Customer[] customers = rest.getForObject(url, Customer[].class);
+	 if(customers!=null)
+	 {
+		 
+		 for(Customer customer:customers)
+		 {
+			 
+			 if (customer.getCibilScore() >= 650 && customer.getCibilScore() <= 750)
+				 if(customer.getSalery()>50000 && customer.getSalery() <=100000)
+					 if(customer.getRequireTenure() >=3 && customer.getRequireTenure()<=5)
+						 if(customer.getRequestedLoanAmount()>=500000 && customer.getRequestedLoanAmount() <=800000)
+			{
+							 Sanction sanction = new Sanction();
+							 sanction.setRateOfInterest(4);
+							 sanction.setFirstName(customer.getFirstName());
+							 sanction.setLoanAmountSanctioned(customer.getRequestedLoanAmount());
+				                sanction.setTenure(customer.getRequireTenure());
+				
+			}
+		 }
+	 }
+		return null;
+	}
+
+}

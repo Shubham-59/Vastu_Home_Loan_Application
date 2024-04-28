@@ -1,0 +1,194 @@
+<h2>Customer Information</h2>
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Details</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let customer of customers">
+        <tr>
+            <td>Customer ID</td>
+            <td>{{ customer.customerId }}</td>
+        </tr>
+        <tr>
+            <td>First Name</td>
+            <td>{{ customer.firstName}}</td>
+        </tr>
+        <tr>
+            <td>Date of Birth</td>
+            <td>{{ customer.dateOfBirth }}</td>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td>{{ customer.age }}</td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>{{ customer.customerGender }}</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>{{ customer.email }}</td>
+        </tr>
+        <tr>
+            <td>Mobile Number</td>
+            <td>{{ customer.mobileNumber }}</td>
+        </tr>
+        <tr>
+            <td>PAN Card</td>
+            <td>{{ customer.panCard}}</td>
+        </tr>
+        <tr>
+            <td>Aadhar Card</td>
+            <td>{{ customer.adharCard }}</td>
+        </tr>
+        <tr>
+            <td>Additional Mobile Number</td>
+            <td>{{ customer.customerAdditionalMobileNumber }}</td>
+        </tr>
+        <tr>
+            <td>Amount Paid for Home</td>
+            <td>{{ customer.customerAmountPaidForHome }}</td>
+        </tr>
+        <tr>
+            <td>Requested Loan Amount</td>
+            <td>{{ customer.requestedLoanAmount}}</td>
+        </tr>
+        <tr>
+            <td>Requested Tenure</td>
+            <td>{{ customer.requireTenure}}</td>
+        </tr>
+        <tr>
+            <td>Educational Info</td>
+            <td>{{ customer.educationalInfo.educationType }}</td>
+        </tr>
+        <tr>
+            <td>Father's Name</td>
+            <td>{{ customer.familyDependentInformation.fatherName }}</td>
+        </tr>
+        <tr>
+            <td>Mother's Name</td>
+            <td>{{ customer.familyDependentInformation.motherName }}</td>
+        </tr>
+        <tr>
+            <td>Spouse's Name</td>
+            <td>{{ customer.familyDependentInformation.spouseName }}</td>
+        </tr>
+        <tr>
+            <td>Marital Status</td>
+            <td>{{ customer.familyDependentInformation.maritalStatus }}</td>
+        </tr>
+        <tr>
+            <td>Permanent Address</td>
+            <td>{{ customer.customerAddress.permanentAddress }}</td>
+        </tr>
+        <tr>
+            <td>Local Address</td>
+            <td>{{ customer.customerAddress.localAddress }}</td>
+        </tr>
+        <tr>
+            <td>Property Value</td>
+            <td>{{ customer.mortgagedetails.mortgagePropertyValue }}</td>
+        </tr>
+        <tr>
+            <td>Property Type</td>
+            <td>{{ customer.mortgagedetails.mortgagePropertyType }}</td>
+        </tr>
+        <tr>
+            <td>Loan on Property</td>
+            <td>{{ customer.mortgagedetails.mortgageLoanOnProperty }}</td>
+        </tr>
+        <tr>
+            <td>Property Insurance</td>
+            <td>{{ customer.mortgagedetails.mortgagePropertyInsurance }}</td>
+        </tr>
+        <tr>
+            <td>Property Proof</td>
+            <td>{{ customer.mortgagedetails.mortgagePropertyProof }}</td>
+        </tr>
+        <tr>
+            <td>Profession Type</td>
+            <td>{{ customer.profession.professionType }}</td>
+        </tr>
+        <tr>
+            <td>Working Period</td>
+            <td>{{ customer.profession.professionWorkingPeriod }}</td>
+        </tr>
+        <tr>
+            <td>Designation</td>
+            <td>{{ customer.profession.professionDesignation }}</td>
+        </tr>
+        <tr>
+            <td>Salary</td>
+            <td>{{ customer.profession.professionSalary }}</td>
+        </tr>
+        <tr>
+            <td>Salary Type</td>
+            <td>{{ customer.profession.professionSalaryType }}</td>
+        </tr>
+        <tr>
+            <td>Salary Slips</td>
+            <td>{{ customer.profession.professionSalarySlips }}</td>
+        </tr>
+        <tr>
+            <td>Account Number</td>
+            <td>{{ customer.accountDetails.accountNumber }}</td>
+        </tr>
+        <tr>
+            <td>Account Type</td>
+            <td>{{ customer.accountDetails.accounType }}</td>
+        </tr>
+        <tr>
+            <td>Account Balance</td>
+            <td>{{ customer.accountDetails.accountBalance }}</td>
+        </tr>
+        <tr>
+            <td>Account Holder Name</td>
+            <td>{{ customer.accountDetails.accountHolderName }}</td>
+        </tr>
+        <tr>
+            <td>Account Status</td>
+            <td>{{ customer.accountDetails.accountStatus }}</td>
+        </tr>
+        <tr>
+            <td>Guarantor's Name</td>
+            <td>{{ customer.guarantorDetails.guarantorName }}</td>
+        </tr>
+        <tr>
+            <td>Guarantor's Date of Birth</td>
+            <td>{{ customer.guarantorDetails.guarantorDateOfBirth }}</td>
+        </tr>
+        <tr>
+            <td>Guarantor Relationship</td>
+            <td>{{ customer.guarantorDetails.guarantorRelationshipWithCustomer }}</td>
+        </tr>
+        <tr>
+            <td>Guarantor Mobile Number</td>
+            <td>{{ customer.guarantorDetails.guarantorMobileNumber }}</td>
+        </tr>
+        <tr>
+            <td>Guarantor Aadhar Card No</td>
+            <td>{{ customer.guarantorDetails.guarantorAdharCardNo }}</td>
+        </tr>
+        <tr>
+            <td>Guarantor Mortgage Details</td>
+            <td>{{ customer.guarantorDetails.guarantorMortgageDetails }}</td>
+        </tr>
+        <tr>
+            <td>Guarantor Job Details</td>
+            <td>{{ customer.guarantorDetails.guarantorJobDetails }}</td>
+        </tr>
+        <tr>
+            <td>Guarantor Local Address</td>
+            <td>{{ customer.guarantorDetails.guarantorLocalAddress }}</td>
+        </tr>
+        <tr>
+            <td>Guarantor Permanent Address</td>
+            <td>{{ customer.guarantorDetails.guarantorPermanentAddress }}</td>
+        </tr>
+        <tr>
+            <td><button>Approved</button></td>
+            <td><button>Reject</button></td>
+        </tr>
+    </tbody>
+</table>

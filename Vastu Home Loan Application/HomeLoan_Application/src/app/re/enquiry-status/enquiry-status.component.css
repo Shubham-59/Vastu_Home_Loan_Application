@@ -1,0 +1,50 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  button {
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 5px;
+    font-size: 14px;
+    color: white;
+    background-color: green;
+    border: none;
+  }.h {
+    text-align: center;
+    background-color: #ffc107;
+    color: #424242;
+    font-size: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 10px; /* Adjust padding for better appearance */
+    border-radius: 10px; /* Rounded corners for a softer look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Improved box shadow */
+    display: inline-block; /* Ensure box only takes necessary width */
+}
+.btn1{
+
+  color:  green;
+}
+
+
+/* Hover effect for the icon */

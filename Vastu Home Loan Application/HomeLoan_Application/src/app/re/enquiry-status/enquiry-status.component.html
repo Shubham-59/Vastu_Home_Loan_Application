@@ -1,0 +1,31 @@
+<h5 class="h">Enquiry Status -</h5>
+<table>
+    <thead>
+        <th>Enquiry ID</th>
+        <th>Loan Customer Name</th>
+        
+        <th>Mobile No</th>
+        <th>PAn Card</th>
+        <th>Cibil</th>
+        <th>Status</th>
+      
+        <th>Forward to RE</th>
+       
+    </thead>
+    <tbody *ngFor="let e of enquiry">
+        <tr>
+            <td>{{e.enquiryId}}</td>
+            <td>{{e.firstName}} {{e.lastName}}</td>
+            <td>{{e.mobileNumber}}</td>
+            <td>{{e.panCard}}</td>
+            <td>{{ e.cibil?.cibilScore }}</td>
+            <td>{{e.status}}</td>
+            <td class="btn1">
+                <button
+                        (click)="handleLoanApplication(e)">
+                    <i class="fa fa-forward" aria-hidden="true"></i> Loan Application Form
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

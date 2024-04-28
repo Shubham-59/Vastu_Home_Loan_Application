@@ -1,0 +1,24 @@
+package com.vashtu.app.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.vashtu.app.model.Sanction;
+import com.vashtu.app.repository.SanctionRepository;
+
+@Service
+public class SanctionServiceImpl implements SanctionService {
+
+	@Autowired
+	private SanctionRepository sanctionRepo;
+	
+	@Autowired
+	private RestTemplate rest;
+	@Override
+	public Sanction saveLoanSanctionInfo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

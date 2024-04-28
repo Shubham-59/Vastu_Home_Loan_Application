@@ -1,0 +1,19 @@
+package com.vashtu.app.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.netflix.discovery.converters.Auto;
+import com.vashtu.app.repository.CMRepository;
+
+@Service
+public class CMServiceImpl implements CMService {
+	
+	@Autowired
+	CMRepository cmrepo;
+	
+	@Autowired
+	private RestTemplate rest;
+
+}

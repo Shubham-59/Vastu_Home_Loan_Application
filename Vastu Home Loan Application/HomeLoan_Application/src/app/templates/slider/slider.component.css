@@ -1,0 +1,62 @@
+.container {
+  place-items: center;
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+}
+
+.slider {
+  display: flex;
+  /* Adjust the animation duration as per your requirement */
+  animation: scroll 10s linear infinite;
+}
+
+.slide {
+  flex: 0 0 auto;
+  position: relative;
+  width: 100%;
+}
+
+img {
+  width: 100%;
+  height: 400px;
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+
+/* Updated keyframes for sliding effect */
+@keyframes scroll {
+  0% {
+    /* Start the animation from the original position */
+    transform: translateX(0);
+  }
+  20% {
+    /* Slide to the left */
+    transform: translateX(0%);
+  }
+  25% {
+    /* Reset to original position */
+    transform: translateX(-100%);
+  }
+  45% {
+    /* Slide to the left again */
+    transform: translateX(-100%);
+  }
+  50% {
+    /* Reset to original position */
+    transform: translateX(-200%);
+  }
+  /* Add more keyframes as needed for additional slides */
+  100% {
+    /* Final position */
+    transform: translateX(-200%);
+  }
+}

@@ -1,0 +1,216 @@
+<div class="form-container">
+  <form [formGroup]="customerForm" (ngSubmit)="submitForm()">
+  <div *ngIf="currentStep === 1">
+      <!-- Step 1: Customer Information -->
+      <h2>Customer Information</h2>
+      <label>Customer Name:</label>
+        <input type="text" formControlName="firstName">
+      <label>Date of Birth:</label>
+        <input type="date" formControlName="dateOfBirth">
+      <label>Age:</label>
+        <input type="number" formControlName="age">
+      <label>Gender:</label>
+        <select formControlName="customerGender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      <label>Email:</label>
+        <input type="email" formControlName="email">
+      <label>Mobile Number:</label>
+        <input type="tel" formControlName="mobileNumber">
+        <label>PAN No:</label>
+        <input type="tel" formControlName="panCard">
+        <label>adharCard:</label>
+        <input type="tel" formControlName="adharCard">
+        <label>Cibil:</label>
+        <input type="number" formControlName="cibilScore">
+        <label>Require Tenure:</label>
+        <input type="number" formControlName="requireTenure">
+      <label>Additional Mobile Number:</label>
+        <input type="tel" formControlName="customerAdditionalMobileNumber">
+      <label>Amount Paid for Home:</label>
+        <input type="number" formControlName="customerAmountPaidForHome">
+      <label>Total Loan Required:</label>
+        <input type="number" formControlName="requestedLoanAmount">
+      <div formGroupName="educationalInfo">
+        <!-- Nested form group for educational information -->
+        <label>Education Type:</label>
+          <input type="text" formControlName="educationType">
+      </div>
+  </div>
+
+  <div *ngIf="currentStep === 2">
+      <!-- Step 2: Document Details -->
+      <h2>Document Details</h2>
+      <div formGroupName="allPersonalDocuments">
+        <label>Address Proof:</label>
+          <input type="file" (change)="onSelectAddressProof($event)" >
+        <label>PAN Card:</label>
+        <input type="file" (change)="onSelectPanCard($event)" >
+        <label>Income Tax:</label>
+        <input type="file" (change)="onSelectIncomeTax($event)">
+        <label>Aadhar Card:</label>
+        <input type="file" (change)="onSelectAddharCard($event)">
+        <label>Photo:</label>
+        <input type="file" (change)="onSelectPhoto($event)" >
+        <label>Signature:</label>
+        <input type="file" (change)="onSelectSignature($event)" >
+        <label>Salary Slips:</label>
+        <input type="file" (change)="onSelectSalarySlips($event)">
+      </div>
+  </div>
+    
+  <div *ngIf="currentStep === 3">
+      <!-- Step 3: Nominee Details -->
+      <h2>Family Dependent Information</h2>
+      <div formGroupName="familyDependentInformation">
+        <label>Father's Name:</label>
+          <input type="text" formControlName="fatherName">
+        <label>Mother's Name:</label>
+          <input type="text" formControlName="motherName">
+        <label>Spouse's Name:</label>
+          <input type="text" formControlName="spouseName">
+        <label>Number of Family Members:</label>
+          <input type="number" formControlName="noOfFamilyMember">
+        <label>Number of Children:</label>
+          <input type="number" formControlName="noOfChild">
+        <label>Marital Status:</label>
+          <select formControlName="maritalStatus">
+            <option value="single">Single</option>
+            <option value="married">Married</option>
+            <option value="divorced">Divorced</option>
+          </select>
+      </div>
+  </div>
+
+    
+  <div *ngIf="currentStep === 4">
+      <!-- Step 4: Customer Address Details -->
+      <h2>Customer Address Details</h2>
+      <div formGroupName="customerAddress">
+        <div formGroupName="permanentAddress">
+          <h3>Permanent Address</h3>
+          <label>House Number:</label>
+            <input type="number" formControlName="houseNumber">
+          <label>Street Name:</label>
+            <input type="text" formControlName="streetName">
+          <label>Area Name:</label>
+            <input type="text" formControlName="areaName">
+          <label>City Name:</label>
+            <input type="text" formControlName="cityName">
+          <label>Pincode:</label>
+            <input type="number" formControlName="pincode">
+          <label>District:</label>
+            <input type="text" formControlName="district">
+          <label>State:</label>
+            <input type="text" formControlName="state">
+        </div>
+        <div formGroupName="localAddress">
+          <h3>Local Address</h3>
+          <label>House Number:</label>
+            <input type="number" formControlName="houseNumber">
+          <label>Street Name:</label>
+            <input type="text" formControlName="streetName">
+          <label>Area Name:</label>
+            <input type="text" formControlName="areaName">
+          <label>City Name:</label>
+            <input type="text" formControlName="cityName">
+          <label>Pincode:</label>
+            <input type="number" formControlName="pincode">
+          <label>District:</label>
+            <input type="text" formControlName="district">
+          <label>State:</label>
+            <input type="text" formControlName="state">
+        </div>
+      </div>
+  </div>
+    
+  <div *ngIf="currentStep === 5">
+      <!-- Step 5: Mortgage Details, Profession -->
+      <h2>Mortgage Details</h2>
+      <div formGroupName="mortagedetails">
+        <h3>Mortgage Details</h3>
+        <label>Mortgage Property Value:</label>
+          <input type="number" formControlName="mortgagePropertyValue">
+        <label>Mortgage Property Proof:</label>
+          <input type="file" (change)="onSelectMortgagePropertyProof($event)" >
+        <label>Mortgage Property Type:</label>
+          <input type="text" formControlName="mortgagePropertyType">
+        <label>Mortgage Loan On Property:</label>
+          <input type="number" formControlName="mortgageLoanOnProperty">
+        <label>Mortgage Property Insurance:</label>
+          <input type="file" (change)="onSelectMortgagePropertyInsurance($event)" >
+      </div>
+      <div formGroupName="profession">
+        <h3>Profession</h3>
+        <label>Profession Type:</label>
+          <input type="text" formControlName="professionType">
+        <label>Profession Salary:</label>
+          <input type="number" formControlName="professionSalary">
+        <label>Profession Salary Type:</label>
+          <select formControlName="professionSalaryType">
+            <option value="fixedSalary">Fixed Salary</option>
+            <option value="hourlyWage">Hourly Wage</option>
+            <option value="commissionBased">Commission-Based</option>
+            <option value="performance-Based">Performance-Based</option>
+            <option value="contractual">Contractual</option>
+            <option value="salaryBonus">Salary + Bonus</option>
+            <option value="profitSharing">Profit-Sharing</option>
+            <option value="other">Other"</option>
+          </select>
+        <label>Profession Working Period:</label>
+          <input type="number" formControlName="professionWorkingPeriod">
+        <label>Profession Designation:</label>
+          <input type="text" formControlName="professionDesignation">
+        <label>Profession Salary Slips:</label>
+          <input type="file" (change)="onSelectProfessionsalaryslips($event)" >
+      </div>
+  </div>
+
+  <div *ngIf="currentStep === 6">
+      <!-- Step 6: Account Details, Property Info, and Guarantor Details -->
+      <div formGroupName="accountDetails">
+        <h3>Account Details</h3>
+        <label>Account Type:</label>
+          <input type="text" formControlName="accountType">
+        <label>Account Balance:</label>
+          <input type="number" formControlName="accountBalance">
+        <label>Account Holder Name:</label>
+          <input type="text" formControlName="accountHolderName">
+        <label>Account Status:</label>
+          <input type="text" formControlName="accountStatus">
+        <label>Account Number:</label>
+          <input type="number" formControlName="accountNumber">
+      </div>
+      <div formGroupName="gaurantorDetails">
+        <h3>Guarantor Details</h3>
+        <label>Guarantor Name:</label>
+          <input type="text" formControlName="guarantorName">
+        <label>Guarantor Date of Birth:</label>
+          <input type="date" formControlName="guarantorDateOfBirth">
+        <label>Relationship with Customer:</label>
+          <input type="text" formControlName="guarantorRelationshipWithCustomer">
+        <label>Guarantor Mobile Number:</label>
+          <input type="number" formControlName="guarantorMobileNumber">
+        <label>Guarantor Adhar Card No:</label>
+          <input type="number" formControlName="guarantorAdharCardNo">
+        <label>Guarantor Mortgage Details:</label>
+          <input type="text" formControlName="guarantorMortgageDetails">
+        <label>Guarantor Job Details:</label>
+          <input type="text" formControlName="guarantorJobDetails">
+        <label>Guarantor Local Address:</label>
+          <input type="text" formControlName="guarantorLocalAddress">
+        <label>Guarantor Permanent Address:</label>
+          <input type="text" formControlName="guarantorPermanentAddress">
+      </div>
+  </div>
+
+    <!-- Navigation Buttons -->
+  <div class="buttons">
+      <button type="button" (click)="prevStep()" [disabled]="currentStep === 1">Previous</button>
+      <button type="button" (click)="nextStep()" [disabled]="currentStep === totalSteps">Next</button>
+      <button type="submit" [disabled]="currentStep !== totalSteps ">Submit</button>
+  </div>
+  </form>
+</div>

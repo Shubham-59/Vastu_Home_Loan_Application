@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    /* background-image: url('/assets/img/employee.jpg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+img {
+    /* max-width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto; */
+    border-radius: 50px;
+    box-shadow: 0px 3px 1px 5px whitesmoke
+}
+
+button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:active {
+    background-color: #004080;
+}
+.fa {
+    font-size: 35px; /* Adjust icon size */
+    margin: 5px; /* Add margin around icons */
+    color: #ff007b; /* Icon color */
+    cursor: pointer; /* Add cursor pointer */
+}
+
+.fa:hover {
+    color: #0056b3; /* Change color on hover */
+}

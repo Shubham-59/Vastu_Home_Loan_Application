@@ -1,0 +1,81 @@
+package com.vashtu.app.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.vashtu.app.model.EnquiryForm;
+import com.vashtu.app.service.EnquiryNotFoundException;
+import com.vashtu.app.service.EnquiryService;
+
+import jakarta.validation.Valid;
+
+@RestController
+@CrossOrigin("*")
+@RequestMapping("/enquiry")
+public class EnquiryController {
+
+	@Autowired
+	private EnquiryService enquiryService;
+    
+	@PostMapping("/save_enquiryinfo")
+	public ResponseEntity<EnquiryForm> saveCustomerEnquiryDetailes(@Valid @RequestBody EnquiryForm enquiry) 
+	{
+		return new ResponseEntity<EnquiryForm>(enquiryService.saveCustomerEnquiryinfo(enquiry), HttpStatus.CREATED);
+	}
+
+	@GetMapping("/getAllEnquiryData")
+	public ResponseEntity<List<EnquiryForm>> getAllEnquiryDetailes()
+	{
+		List<EnquiryForm>listEnquiry=enquiryService.getAllEnquiryDetailes();
+	//	System.out.println(listEnquiry.get(0).getCibil().getCibilScore());
+	           return new ResponseEntity<List<EnquiryForm>>(listEnquiry, HttpStatus.OK) ;
+	}
+	@GetMapping("/getEnquiryById/{enquiryId}")
+	public ResponseEntity<EnquiryForm> getEnqiuryById(@PathVariable int enquiryId)
+	{
+
+	return new ResponseEntity<EnquiryForm>(enquiryService.getEnquiryById(enquiryId),HttpStatus.OK);
+	}
+	
+	@PutMapping("/forward_To_OE/{enquiryId}")
+	public ResponseEntity<EnquiryForm> updateTheStatus(@PathVariable int enquiryId/*@PathVariable String status*/)
+	
+	{ return new ResponseEntity<EnquiryForm>(enquiryService.updateStatusTo_Forward(enquiryId),HttpStatus.CREATED);   	
+	}
+	@GetMapping("/getAllEnquiryCount")
+    public ResponseEntity<Integer> getAllEnquiryCount() {
+        int enquiryCount = enquiryService.getAllEnquiryCount();
+        return new ResponseEntity<>(enquiryCount, HttpStatus.OK);
+    }
+
+	@GetMapping("/getAllEnquiryCountApproved")
+    public ResponseEntity<Integer> getAllEnquiryCountApproved() {
+        int countApproved = enquiryService.getAllEnquiryCountAproved();
+        return new ResponseEntity<>(countApproved, HttpStatus.OK);
+    }
+
+	@GetMapping("getAllEnquiryCountRejected")
+	public ResponseEntity<Integer> getAllEnquiryCountRejected()
+	{
+		int countRejected=enquiryService.getAllEnquiryCountRejected();
+		return new ResponseEntity<Integer>(countRejected,HttpStatus.OK);
+	}
+
+	@PutMapping("/upadetStatusCM/{enquiryId}")
+	public ResponseEntity<EnquiryForm> upadteStatusForwarededToCM(@PathVariable int enquiryId)
+	{
+		return new ResponseEntity<EnquiryForm>(enquiryService.updateStatusForwardedToCM(enquiryId),HttpStatus.CREATED);
+	}
+}
+

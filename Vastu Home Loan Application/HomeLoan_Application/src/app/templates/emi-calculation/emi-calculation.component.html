@@ -1,0 +1,23 @@
+<div class="emi-calculator-container">
+    <h2>EMI Calculator</h2>
+    <div class="d-flex justify-content-center">
+      <label>Loan Amount:</label>
+      <input type="number" [(ngModel)]="loanAmount" />
+    </div>
+    <div class="d-flex justify-content-center">
+      <label>Interest Rate (% per annum):</label>
+      <input type="number" [(ngModel)]="interestRate" />
+    </div>
+    <div class="d-flex justify-content-center">
+      <label>Loan Tenure (years):</label>
+      <input type="number" [(ngModel)]="loanTenure" />
+    </div>
+    <div class="d-flex justify-content-center">
+      <button (click)="calculateEMI()">Calculate EMI</button>
+    </div>
+    <div *ngIf="emi" class="d-flex justify-content-center">
+      <label class="result">
+      <h3>Your EMI: {{ emi | currency:'INR' }}</h3>
+    </label>
+    </div>
+</div>

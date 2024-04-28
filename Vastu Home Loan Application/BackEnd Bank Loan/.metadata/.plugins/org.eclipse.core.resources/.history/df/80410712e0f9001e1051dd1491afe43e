@@ -1,0 +1,13 @@
+package com.vashtu.app.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.vashtu.app.service.CMService;
+
+@RestController
+public class CMController {
+	
+@Autowired
+private CMService cmService;
+}

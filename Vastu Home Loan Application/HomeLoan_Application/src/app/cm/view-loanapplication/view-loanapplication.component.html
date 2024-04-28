@@ -1,0 +1,31 @@
+<table>
+    <thead>
+        <td>Id</td>
+        <td>Name</td>
+        <td>PanCard</td>
+        <td>Loan Amount</td>
+        <td>Status</td>
+        <td>Cibil</td>
+        <td>View Form</td>
+        <td>Customer Action</td>
+    </thead>
+    <tbody *ngFor="let l of loandata">
+        <td>{{l.customerId}}</td>
+        <td>{{l.firstName}}</td>
+        <td>{{l.panCard}}</td>
+        <td>{{l.requestedLoanAmount}}</td>
+        <td>{{l.status}}</td>
+        <td>{{l.cibilScore}}</td>
+        <td>
+            <!-- Font Awesome icon with click event -->
+            <i class="fa fa-info" aria-hidden="true" (click)="onView(l.customerId)"></i>
+          </td>
+        <td class="action-cell">
+            <div class="button-container">
+                <button class="approve-btn" (click)="approvedLoan(l)">Approved</button>
+                <button class="reject-btn" (click)="rejectedLoan(l)">Rejected</button>
+                <i class="fa fa-forward" aria-hidden="true"></i><button class="btn btn-warning">RE</button>
+            </div>
+        </td>
+    </tbody>
+</table>

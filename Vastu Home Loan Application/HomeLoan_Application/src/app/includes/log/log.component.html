@@ -1,0 +1,44 @@
+<!-- <body class="bg">
+<div class="login">
+  <div>
+    <p>Sign up For Online Banking</p>
+    <p>Get the instance Loan</p>
+  </div>
+  <div class="loginBox">
+  <div class="header">ACCESS YOUR ACCOUNT</div>
+  <form [formGroup]="loginform" (ngSubmit)="loginCheck()">
+    <input type="text" placeholder="&#61447; &#160; Username" formControlName="username"/>
+    <input type="password" placeholder="&#xf023; &#160; Password" formControlName="password" />
+    <button type="submit" class="button">LOGIN</button>
+  </form>
+  <p><a href="#">Sign Up</a> | <a href="#">Forgot Password</a></p>
+</div>
+</div>
+</body> -->
+<!-- <div class="slider active">
+  eBanking Services
+</div>
+<div class="slider">
+  Retirement Advice
+</div>
+<div class="slider">
+  Mortgage Benefits
+</div> -->
+
+<div class="box">
+  <h2>Login</h2>
+  <form [formGroup]="loginform" (ngSubmit)="loginCheck()">
+    <div class="inputBox">
+      <input type="text" placeholder="&#61447; &#160; Username" formControlName="username"/>
+      <label>Username</label>
+    </div>
+    <div class="inputBox">
+      <input type="password" placeholder="&#xf023; &#160; Password" formControlName="password" required value=""
+             onkeyup="this.setAttribute('value', this.value);"
+             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+             title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+      <label>Password</label>
+    </div>
+    <button type="submit" class="button">LOGIN</button>
+  </form>
+</div>

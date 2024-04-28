@@ -1,0 +1,198 @@
+.approve-btn, .reject-btn {
+    padding: 8px;
+    margin-right: 1px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    margin-left: 8px;
+    font-weight: bold;
+  
+    display: inline-block;
+    transition: background-color 0.2s ease;
+    box-shadow: 0px 3px 8px 1px rgba(0, 0, 0, 0.3);
+}
+
+
+.approve-btn {
+    background-color: #4CAF50;
+}
+
+.approve-btn:hover {
+    background-color: #3e8e41;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.reject-btn {
+    background-color: #FF5733;
+}
+
+.reject-btn:hover {
+    background-color: #e74c3c;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Center Align Buttons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+/* Basic Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #424242;
+    font-weight:548;
+    cursor: pointer;
+
+   
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Styling Rows */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover Effect and Box Shadow */
+tr:hover {
+    background-color: #f1f1f1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styling */
+.approve-btn, .reject-btn {
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.approve-btn {
+    background-color: #4CAF50;
+}
+
+.approve-btn:hover {
+    background-color: #3e8e41;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.reject-btn {
+    background-color: #FF5733;
+}
+
+.reject-btn:hover {
+    background-color: #e74c3c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Font Awesome Icons */
+.fa {
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+/* Center Align Buttons */
+.action-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}/* Basic Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    margin-top: 20px; /* Add spacing above the table */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Enhance table box shadow */
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #4285f4; /* Blue heading color */
+    color: #fff; /* White text color for headings */
+    font-size: 16px; /* Increase font size for headings */
+    font-weight: bold;
+}
+
+/* Styling Rows */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover Effect and Box Shadow for Rows */
+tr:hover {
+    background-color: #f1f1f1;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance row hover box shadow */
+}
+
+/* Button Styling */
+.approve-btn, .reject-btn {
+    padding: 12px 24px;
+    margin-right: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.approve-btn {
+    background-color: #4CAF50;
+}
+
+.approve-btn:hover {
+    background-color: #3e8e41;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhance button hover box shadow */
+}
+
+.reject-btn {
+    background-color: #FF5733;
+}
+
+.reject-btn:hover {
+    background-color: #e74c3c;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhance button hover box shadow */
+}
+
+/* Font Awesome Icons */
+.fa {
+    font-size: 18px; /* Increase icon size */
+    margin-right: 8px;
+}
+
+/* Center Align Buttons */
+.action-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+thead{
+    background: linear-gradient(to right, #28a745 50%, #007bff 50%);
+}
+
